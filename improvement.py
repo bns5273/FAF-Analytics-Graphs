@@ -1,3 +1,5 @@
+# This script retrieves various information on my game history.
+
 import datetime
 import json
 import urllib.request

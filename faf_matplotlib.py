@@ -1,3 +1,8 @@
+# Goal: Display FAF rating history and other statistics
+# Features: Can cache and update data. Displays rating history using matplotlib.
+#           Displays other info such as games, win percentage, and average rating delta by each faction.
+
+
 import matplotlib.pyplot as plt
 import datetime
 import json

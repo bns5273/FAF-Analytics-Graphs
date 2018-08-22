@@ -1,3 +1,8 @@
+# Goal: Display FAF rating history and other statistics
+# Features: Can cache and update data. Displays rating history using Plotly.
+#           Displays other info such as games, win percentage, and average rating delta by each faction.
+
+
 import plotly
 import datetime
 import json
@@ -99,7 +104,7 @@ overWins = [plotly.graph_objs.Scatter(
     mode='lines+markers'
 )]
 
-# plotly.plotly.plot(overTime, filename='overTime')
-# plotly.plotly.plot(overGames, filename='overGames')
-# plotly.plotly.plot(overLosses, filename='overLosses')
-# plotly.plotly.plot(overWins, filename='overWins')
+plotly.plotly.plot(overTime, filename='overTime')
+plotly.plotly.plot(overGames, filename='overGames')
+plotly.plotly.plot(overLosses, filename='overLosses')
+plotly.plotly.plot(overWins, filename='overWins')

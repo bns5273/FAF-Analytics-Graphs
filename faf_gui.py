@@ -1,3 +1,6 @@
+# This is a simple GUI for displaying the rating history for a specific player and game mod.
+
+
 import matplotlib
 import tkinter as tk
 import datetime
