@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8e349db-c626-47eb-8a6e-be93e9860c33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/faf_spocko_stats.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/faf_spocko_stats.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="a8e349db-c626-47eb-8a6e-be93e9860c33" name="Default Changelist" comment="renamed files for clarity">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,17 +52,60 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1738348373">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="55" />
+          <entry key="md" value="1" />
+          <entry key="txt" value="26" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="81" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="md" value="1" />
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/faf_gui.py">
+        <entry file="file://$PROJECT_DIR$/../torch/setons_nn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="257">
+              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
               <folding>
-                <element signature="e#95#112#0" expanded="true" />
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../torch/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -81,6 +120,7 @@
       <list>
         <option value="$USER_HOME$/Documents/PycharmProjects/FAF/parseReplay.py" />
         <option value="$PROJECT_DIR$/../torch/mean-dev-fac-2.py" />
+        <option value="$PROJECT_DIR$/../torch/README.md" />
       </list>
     </option>
   </component>
@@ -110,10 +150,6 @@
           <expand>
             <path>
               <item name="faf_spocko_stats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="faf_spocko_stats" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="faf_spocko_stats" type="b2602c69:ProjectViewProjectNode" />
               <item name="torch" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -124,7 +160,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/myconky" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -141,7 +177,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.faf_gui">
+  <component name="RunManager" selected="Python.mean-dev-fac-2">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="faf_spocko_stats" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,7 +257,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../torch/mean-dev-fac-2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../torch/setons_nn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,8 +273,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.faf_gui" />
         <item itemvalue="Python.mean-dev-fac-2" />
+        <item itemvalue="Python.faf_gui" />
         <item itemvalue="Python.faf_matplotlib" />
       </list>
     </recent_temporary>
@@ -254,18 +290,25 @@
       <option name="presentableId" value="Default" />
       <updated>1534969661576</updated>
     </task>
+    <task id="LOCAL-00001" summary="renamed files for clarity">
+      <created>1535165702265</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1535165702265</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="29" width="1159" height="739" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19936034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19894366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3264642" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32550335" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -274,14 +317,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33188722" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33221477" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.329718" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,31 +333,41 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="renamed files for clarity" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed files for clarity" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Documents/PycharmProjects/FAF/parseReplay.py" />
     <entry file="file://$USER_HOME$/Documents/PycharmProjects/FAF/replayInfos.py" />
-    <entry file="file://$PROJECT_DIR$/faf_matplotlib.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/myconky">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../torch/mean-dev-fac-2.py">
+    <entry file="file://$PROJECT_DIR$/faf_matplotlib.py" />
+    <entry file="file://$USER_HOME$/Downloads/myconky" />
+    <entry file="file://$PROJECT_DIR$/faf_gui.py" />
+    <entry file="file://$PROJECT_DIR$/../torch/mean-dev-fac.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2438">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="-1980">
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faf_gui.py">
+    <entry file="file://$PROJECT_DIR$/../torch/ex_1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../torch/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../torch/setons_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
           <folding>
-            <element signature="e#95#112#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
