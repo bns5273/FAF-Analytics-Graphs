@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/faf_spocko_stats.iml" filepath="$PROJECT_DIR$/.idea/faf_spocko_stats.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../torch/.idea/torch.iml" filepath="$PROJECT_DIR$/../torch/.idea/torch.iml" />
     </modules>
   </component>
 </project>
