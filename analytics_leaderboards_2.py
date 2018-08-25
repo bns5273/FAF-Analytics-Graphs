@@ -8,9 +8,9 @@ import json
 import numpy as np
 
 
-with open('data/ladderleaderboard.json', 'r') as l:
+with open('/home/brett/PycharmProjects/data/ladderleaderboard (1).json', 'r') as l:
     ladderl = json.loads(l.read())
-with open('data/globalleaderboard.json', 'r') as g:
+with open('/home/brett/PycharmProjects/data/globalleaderboard (1).json', 'r') as g:
     globall = json.loads(g.read())
 
 print(len(ladderl), 'total')

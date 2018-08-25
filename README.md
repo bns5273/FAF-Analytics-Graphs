@@ -10,11 +10,16 @@ UI (TkInter) ● JSON ● Plotly ● MatPlotLib ● Urllib ● Numpy ● RSQL fi
  
 
 Here are the plotted graphs that were created with this project:  
+
+rating_history_plotly:  
 [my rating over time](https://plot.ly/~bsse/12)  
 [my rating over games](https://plot.ly/~bsse/14)  
 [my rating over wins](https://plot.ly/~bsse/33)  
 [my rating over losses](https://plot.ly/~bsse/35)  
 
-[ladder rating over global rating](https://plot.ly/~bsse/23)  
+analytics_leaderboards_2.py:  
+[global rating over ladder rating](https://plot.ly/~bsse/23)
+  
+analytics_leaderboards.py:  
 [global rating over games played](https://plot.ly/~bsse/25)  
 [ladder rating over games played](https://plot.ly/~bsse/27)  
