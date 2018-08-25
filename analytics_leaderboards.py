@@ -1,5 +1,4 @@
 import plotly
-import datetime
 import json
 import numpy as np
 import operator
@@ -47,11 +46,11 @@ while i < ladderl.__len__() -1 and j < globall.__len__() -1:
         j -= 1
 print(c)
 
-laddervglobal = [plotly.graph_objs.Scatter(
-    x=lrate,
-    y=grate,
-    mode='markers'
-)]
+# laddervglobal = [plotly.graph_objs.Scatter(
+#     x=lrate,
+#     y=grate,
+#     mode='markers'
+# )]
 laddervgames = [plotly.graph_objs.Scatter(
     x=games,
     y=lrate,
@@ -63,7 +62,7 @@ globalvgames = [plotly.graph_objs.Scatter(
     mode='markers'
 )]
 
-plotly.plotly.plot(laddervglobal, filename='laddervsglobal')
+# plotly.plotly.plot(laddervglobal, filename='laddervsglobal')
 plotly.plotly.plot(laddervgames, filename='laddervgames')
 plotly.plotly.plot(globalvgames, filename='globalvgames')
 

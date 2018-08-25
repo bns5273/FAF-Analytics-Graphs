@@ -5,7 +5,9 @@ UI (TkInter) ● JSON ● Plotly ● MatPlotLib ● Urllib ● Numpy ● RSQL fi
 * rating_history_matplotlib.py and rating_history_plotly.py provide various graphs of data downloaded from the api.faforever.com database.  
 * analytics_factions.py retrieves data on Williamson's Bridge matches: the faction, mean, and deviation of both players. It then makes a hypothesis as to which faction provides an advantage on this map.    
 * analytics_games.py is a short script for printing out the most recent games of mine and displaying rating deltas, dates/times, etc.    
-* analytics_leaderboards.py is another small script that I used to create some other interesting graphs the the database. I compare the ratings of players over the experience they have with the game, as well as plot their performance in different game modes.
+* analytics_leaderboards.py is another small script that I used to create some other interesting graphs using the database. I compare the ratings of players over the experience they have with the game.
+* analytics_leaderboards_2.py uses similar data to make a comparison between players' performance in different game modes.
+ 
 
 Here are the plotted graphs that were created with this project:  
 [my rating over time](https://plot.ly/~bsse/12)  
