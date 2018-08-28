@@ -6,8 +6,6 @@ import tkinter as tk
 import datetime
 import json
 import urllib.request
-
-matplotlib.use('TkAgg')
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
@@ -37,7 +35,7 @@ class MPLGraph(Figure):
                                     "&fields[gamePlayerStats]=afterMean,afterDeviation,faction,scoreTime"
                                     "&page[limit]=10000".format(player, mod)) as url:
             data = json.loads(url.read())
-        # with open('data/spocko.json', 'r') as infile:
+        # with open('/home/brett/Documents/Code/data/spocko.json', 'r') as infile:
         #     data = json.loads(infile.read())
 
         colors = ['#00486b', '#005119', '#801609', '#9a751d']
@@ -57,9 +55,12 @@ class MPLGraph(Figure):
         self.plot.scatter(time, rating, color=faction, s=5)
 
 
+matplotlib.use('TkAgg')
 root = tk.Tk()
 root.title('FAF Rating History Tool')
 root.geometry('800x600')
+graph_page = GraphPage(root)
+
 username = tk.Entry(root, width=20)
 username.insert(0, 'Spocko')
 username.pack()
@@ -70,7 +71,6 @@ mod.pack()
 
 def clicked():
     fig = MPLGraph(username.get(), mod.get())
-    graph_page = GraphPage(root)
     graph_page.add_mpl_figure(fig)
 
 
