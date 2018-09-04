@@ -10,7 +10,7 @@ import urllib.request
 import numpy as np
 
 
-download = False
+download = True
 
 if download:
     with urllib.request.urlopen("https://api.faforever.com/data/gamePlayerStats?"
@@ -18,10 +18,10 @@ if download:
                                 "&fields[gamePlayerStats]=afterMean,afterDeviation,faction,scoreTime"
                                 "&page[limit]=10000") as url:
         data = json.loads(url.read())
-        with open('data/spocko.json', 'w') as outfile:
+        with open('spocko.json', 'w') as outfile:
             json.dump(data, outfile)
 else:
-    with open('data/spocko.json', 'r') as infile:
+    with open('spocko.json', 'r') as infile:
         data = json.loads(infile.read())
 # print(data)
 
@@ -106,5 +106,5 @@ overWins = [plotly.graph_objs.Scatter(
 
 plotly.plotly.plot(overTime, filename='overTime')
 plotly.plotly.plot(overGames, filename='overGames')
-plotly.plotly.plot(overLosses, filename='overLosses')
-plotly.plotly.plot(overWins, filename='overWins')
+# plotly.plotly.plot(overLosses, filename='overLosses')
+# plotly.plotly.plot(overWins, filename='overWins')

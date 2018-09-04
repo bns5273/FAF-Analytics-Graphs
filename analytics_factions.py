@@ -23,11 +23,12 @@ def win_probability(am, ad, bm, bd):
     return cdf(delta_mu / denom)
 
 
-dl = False
+dl = True
 
-with open('/home/brett/Documents/Code/data/ladder.json', 'r') as file:
+with open('ladder.json', 'r') as file:
     ld = json.loads(file.read())
 # ld = []
+print(len(ld))
 if dl:
     for page in range(20, 30):
         with urllib.request.urlopen("https://api.faforever.com/data/gamePlayerStats?"
@@ -39,10 +40,9 @@ if dl:
                                     "&page[offset]={}".format(page * 10000)) as url:
             new = json.loads(url.read())['data']
         ld += new
-        print(page)
         if len(new) < 10000:
             break
-    with open('/home/brett/Documents/Code/data/ladder.json', 'w') as outfile:
+    with open('ladder.json', 'w') as outfile:
         json.dump(ld, outfile)
 
 
@@ -107,7 +107,7 @@ for i in range(4):
         xbins=dict(
             start=-350,
             end=2350,
-            size=10
+            size=100
         )
     ))
 
