@@ -7,28 +7,20 @@ This is the RSQL filter that can be used at api.faforever.com
 game.featuredMod.technicalName==ladder1v1;game.mapVersion.id==593;game.validity=="VALID";beforeDeviation<80
 '''
 
-import numpy
+
 import json
-from math import sqrt
+import datetime
 import plotly.plotly as py
 import plotly.graph_objs as go
 import urllib.request
-from trueskill import BETA
-from trueskill.backends import cdf
 
 
-def win_probability(am, ad, bm, bd):
-    delta_mu = am - bm
-    denom = sqrt(2 * (BETA * BETA) + pow(ad, 2) + pow(bd, 2))
-    return cdf(delta_mu / denom)
-
-
-dl = True
+dl = False
 
 with open('ladder.json', 'r') as file:
     ld = json.loads(file.read())
 # ld = []
-print(len(ld))
+print(len(ld), 'entries')
 if dl:
     for page in range(20, 30):
         with urllib.request.urlopen("https://api.faforever.com/data/gamePlayerStats?"
@@ -46,17 +38,19 @@ if dl:
         json.dump(ld, outfile)
 
 
-factionWins = [numpy.array([]), numpy.array([]), numpy.array([]), numpy.array([])]
-factionProbs = [numpy.array([]), numpy.array([]), numpy.array([]), numpy.array([])]
-factionRatings = [numpy.array([]), numpy.array([]), numpy.array([]), numpy.array([])]
+factionWins = [[], [], [], []]
+factionRatings = [[], [], [], []]
+factionDates = [[], [], [], []]
 
 
 i = 0
-while i < ld.__len__()-3:
+while i < ld.__len__()-1:
     if int(ld[i]['id'])+1 != int(ld[i+1]['id']):
         i += 1
         continue
-    i += 2
+    if ld[i]['attributes']['scoreTime'] is None or ld[i+1]['attributes']['scoreTime'] is None:
+        i += 2
+        continue
 
     if ld[i]['attributes']['score'] == 1:
         winner = ld[i]
@@ -67,35 +61,35 @@ while i < ld.__len__()-3:
 
     am = winner['attributes']['beforeMean']
     ad = winner['attributes']['beforeDeviation']
+    at = datetime.datetime.strptime(winner['attributes']['scoreTime'], '%Y-%m-%dT%H:%M:%SZ')
     bm = loser['attributes']['beforeMean']
     bd = loser['attributes']['beforeDeviation']
-
-    prob = win_probability(am, ad, bm, bd)
-    # if prob < .2 or prob > .8:
-    #     continue
+    bt = datetime.datetime.strptime(loser['attributes']['scoreTime'], '%Y-%m-%dT%H:%M:%SZ')
 
     j = winner['attributes']['faction'] - 1
     k = loser['attributes']['faction'] - 1
-    factionWins[j] = numpy.append(factionWins[j], 1)
-    factionProbs[j] = numpy.append(factionProbs[j], prob)
-    factionRatings[j] = numpy.append(factionRatings[j], am - 3 * ad)
 
-    factionWins[k] = numpy.append(factionWins[k], 0)
-    factionProbs[k] = numpy.append(factionProbs[k], 1 - prob)
-    factionRatings[k] = numpy.append(factionRatings[k], bm - 3 * bd)
+    factionWins[j].append(1)
+    factionRatings[j].append(am - 3 * ad)
+    factionDates[j].append(at)
+
+    factionWins[k].append(0)
+    factionRatings[k].append(bm - 3 * bd)
+    factionDates[k].append(bt)
+
+    i += 2
+
 
 facNames = ['UEF', 'Aeon', 'Cybran', 'Seraphim']
 colors = ['#00486b', '#005119', '#801609', '#9a751d']
 
-template = '{0:10} {1:<8.{prec}} {2:<12.{prec}} {3:<9.{prec}} {4:<9.{prec}} {5:6}'
-print(template.format('fac', 'win%', 'win%/prob%', 'correl', 'avg rating', 'games', prec=12))
-for fac, w, p, r in zip(facNames, factionWins, factionProbs, factionRatings):
-    print(template.format(fac, w.mean(), w.mean() / p.mean(), numpy.corrcoef(w, p)[0][1], r.mean(), len(w), prec=5))
 
-
-data = []
+winrate_rating_data = []
+games_data = []
+winrate_date_data = []
+games_date_data = []
 for i in range(4):
-    data.append(go.Histogram(
+    winrate_rating_data.append(go.Histogram(
         x=factionRatings[i],
         y=factionWins[i],
         name=facNames[i],
@@ -104,15 +98,46 @@ for i in range(4):
         marker=dict(
             color=colors[i]
         ),
+        autobinx=False,
         xbins=dict(
-            start=-350,
-            end=2350,
-            size=100
+            start=100,
+            end=2500,
+            size=25
         )
     ))
-
-fig = go.Figure(
-    data=data,
+    games_data.append(go.Histogram(
+        x=factionRatings[i],
+        name=facNames[i],
+        marker=dict(
+            color=colors[i]
+        ),
+        autobinx=False,
+        xbins=dict(
+            start=100,
+            end=2500,
+            size=25
+        )
+    ))
+    winrate_date_data.append(go.Histogram(
+        x=factionDates[i],
+        y=factionWins[i],
+        name=facNames[i],
+        histfunc='avg',
+        hoverinfo="x+y",
+        marker=dict(
+            color=colors[i]
+        )
+    ))
+    games_date_data.append(go.Histogram(
+        x=factionDates[i],
+        name=facNames[i],
+        hoverinfo="x+y",
+        marker=dict(
+            color=colors[i]
+        )
+    ))
+winrate_rating_fig = go.Figure(
+    data=winrate_rating_data,
     layout=go.Layout(
         barmode='stack',
         xaxis=dict(
@@ -123,4 +148,43 @@ fig = go.Figure(
         )
     )
 )
-py.plot(fig, filename='factions_WB_winRate')
+games_fig = go.Figure(
+    data=games_data,
+    layout=go.Layout(
+        barmode='stack',
+        xaxis=dict(
+            title='Player Rating'
+        ),
+        yaxis=dict(
+            title='Games'
+        )
+    )
+)
+winrate_date_fig = go.Figure(
+    data=winrate_date_data,
+    layout=go.Layout(
+        barmode='stack',
+        xaxis=dict(
+            title='Date'
+        ),
+        yaxis=dict(
+            title='Win Rate'
+        )
+    )
+)
+games_date_fig = go.Figure(
+    data=games_date_data,
+    layout=go.Layout(
+        barmode='stack',
+        xaxis=dict(
+            title='Date'
+        ),
+        yaxis=dict(
+            title='Games'
+        )
+    )
+)
+py.plot(winrate_rating_fig, filename='factions_winRate_rating')
+py.plot(games_fig, filename='factions_games_rating')
+py.plot(winrate_date_fig, filename='factions_winRate_date')
+py.plot(games_date_fig, filename='factions_games_date')
