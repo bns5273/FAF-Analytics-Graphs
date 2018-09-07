@@ -11,8 +11,9 @@ UI (TkInter) ● JSON ● Plotly ● MatPlotLib ● Urllib ● Numpy ● RSQL fi
 Here are some of the graphs that I created with this project:  
 
 analytics_factions.py:  
-[win percentages by faction and rating](https://plot.ly/~bsse/42)  
-[games played by faction and rating](https://plot.ly/~bsse/39)  
+[win percentages by faction and rating](https://plot.ly/~bsse/45)  
+[games played by faction and rating](https://plot.ly/~bsse/50)  
+[games played by faction and date](https://plot.ly/~bsse/54)
 
 analytics_leaderboards.py:  
 [global rating over games played](https://plot.ly/~bsse/25)  
