@@ -44,7 +44,7 @@ factionDates = [[], [], [], []]
 
 
 i = 0
-while i < ld.__len__()-1:
+while i < len(ld)-1:
     if int(ld[i]['id'])+1 != int(ld[i+1]['id']):
         i += 1
         continue
@@ -102,7 +102,7 @@ for i in range(4):
         xbins=dict(
             start=100,
             end=2500,
-            size=25
+            size=20
         )
     ))
     games_data.append(go.Histogram(
@@ -115,7 +115,7 @@ for i in range(4):
         xbins=dict(
             start=100,
             end=2500,
-            size=25
+            size=20
         )
     ))
     winrate_date_data.append(go.Histogram(
