@@ -98,6 +98,7 @@ for i in range(4):
         marker=dict(
             color=colors[i]
         ),
+        opacity=.65,
         autobinx=False,
         xbins=dict(
             start=100,
@@ -126,7 +127,8 @@ for i in range(4):
         hoverinfo="x+y",
         marker=dict(
             color=colors[i]
-        )
+        ),
+        opacity=.65
     ))
     games_date_data.append(go.Histogram(
         x=factionDates[i],
@@ -139,7 +141,7 @@ for i in range(4):
 winrate_rating_fig = go.Figure(
     data=winrate_rating_data,
     layout=go.Layout(
-        barmode='stack',
+        barmode='overlay',
         xaxis=dict(
             title='Player Rating'
         ),
@@ -163,7 +165,7 @@ games_fig = go.Figure(
 winrate_date_fig = go.Figure(
     data=winrate_date_data,
     layout=go.Layout(
-        barmode='stack',
+        barmode='overlay',
         xaxis=dict(
             title='Date'
         ),
@@ -185,6 +187,6 @@ games_date_fig = go.Figure(
     )
 )
 py.plot(winrate_rating_fig, filename='factions_winRate_rating')
-py.plot(games_fig, filename='factions_games_rating')
+# py.plot(games_fig, filename='factions_games_rating')
 py.plot(winrate_date_fig, filename='factions_winRate_date')
-py.plot(games_date_fig, filename='factions_games_date')
+# py.plot(games_date_fig, filename='factions_games_date')
