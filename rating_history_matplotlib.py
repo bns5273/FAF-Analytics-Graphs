@@ -21,10 +21,10 @@ if download:
                                 "&fields[gamePlayerStats]=afterMean,afterDeviation,faction,scoreTime"
                                 "&page[limit]=10000".format(player, mod)) as url:
         data = json.loads(url.read())
-        with open('data/spocko.json', 'w') as outfile:
+        with open('spocko.json', 'w') as outfile:
             json.dump(data, outfile)
 else:
-    with open('data/spocko.json', 'r') as infile:
+    with open('spocko.json', 'r') as infile:
         data = json.loads(infile.read())
 # print(data)
 
@@ -56,15 +56,19 @@ for i in data['data']:
             f_rDelta[f].append(rating[-1] - rating[-2])
         f_rating[f].append(rating[-1])
 
-recent = 100    # most recent games only
+recent = 200    # most recent games only
 template = '{0:9} {1:<6} {2:<8.{prec}} {3:<8.{prec}} {4:<6} {5:<6}'
 print(template.format('faction', 'games', 'win %', 'a.r.d.', 'max',  'last', prec=8))
 for f, wp, rd, r, in zip(factions, f_winperc, f_rDelta, f_rating):
     print(template.format(f, len(wp), np.mean(wp[-recent:]), np.mean(rd[-recent:]), int(np.max(r)), int(r[-1]), prec=4))
 
 
-# plt.figure(dpi=300)
+plt.figure(dpi=300)
 plt.plot(time, rating, alpha=.5, c='black', linewidth=.8)
 plt.scatter(time, rating, color=faction, s=5)
+plt.title('FAF TrueSkill Rating History')
+plt.xlabel('Date')
+plt.xticks(rotation=90, )
+plt.ylabel('Rating')
 plt.show()
 # plt.savefig("g.png")
